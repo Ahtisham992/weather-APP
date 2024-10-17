@@ -26,4 +26,7 @@ Before you begin, ensure you have the following:
 - Basic understanding of HTML, CSS, and JavaScript.
 - An OpenWeather API key. You can sign up and get a key from [OpenWeather](https://openweathermap.org/api).
 - An Gemini API key. you can sign up on Google ai studio and a get a key.
+- Clone the git add the API keys
+- Run on live server.
+- Here you go. The SkyScout Weather APP.
 
