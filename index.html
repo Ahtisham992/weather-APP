@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyScout</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <img src="https://cdn.jim-nielsen.com/ios/1024/weather-2021-12-07.png" alt="Logo" class="Logo">
+            <h2>SkyScout</h2>
+            <button id="dashboard-btn">Dashboard</button>
+            <button id="table-btn">Table</button>
+        </nav>
+        
+        <main class="main-content">
+            <div class="header">
+                <div class="search-container">
+                    <input type="text" id="city-input" placeholder="Enter city name">
+                    <button id="get-weather">Search</button>
+                </div>
+                <img src="https://cdn.jim-nielsen.com/ios/1024/weather-2021-12-07.png" alt="User Profile" class="profile-pic">
+            </div>
+            
+            <section id="dashboard" class="dashboard-section">
+                <div id="weather-data" class="weather-data hidden">
+                    <div class="weather-background"></div>
+                    <div class="weather-content">
+                        <h3 id="city-name"></h3>
+                        <div class="weather-info">
+                            <img id="weather-icon" class="weather-icon" alt="Weather Icon">
+                            <div>
+                                <p id="temperature"></p>
+                                <p id="condition"></p>
+                            </div>
+                        </div>
+                        <p id="humidity"></p>
+                        <p id="wind-speed"></p>
+                    </div>
+                </div>
+                
+                <div class="charts-container">
+                    <div class="chart-box">
+                        <canvas id="barChart"></canvas>
+                    </div>
+                    <div class="chart-box">
+                        <canvas id="doughnutChart"></canvas>
+                    </div>
+                    <div class="chart-box">
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="table" class="table-section hidden">
+                <div class="table-container">
+                    <table id="weather-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Temperature (°C)</th>
+                                <th>Condition</th>
+                            </tr>
+                        </thead>
+                        <tbody id="forecast-data"></tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <div id="chatbot-container">
+                <h3>Weather Assistant</h3>
+                <div id="chatbox" class="chatbox">
+                    <div id="chatlog" class="chatlog"></div>
+                    <input type="text" id="user-input" class="user-input" placeholder="Ask about the weather...">
+                    <button id="send-button" class="send-button">Send</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

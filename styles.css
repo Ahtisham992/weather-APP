@@ -1,0 +1,284 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #EC8305;
+    --background-color: #f0f3f5;
+    --text-color: #34495e;
+    --card-background: #ffffff;
+    --sidebar-color: #3498db;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: var(--sidebar-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar button:hover {
+    background-color: #d7e41c;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    flex-grow: 1;
+    max-width: 500px;
+}
+
+#city-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px 0 0 5px;
+    font-size: 1em;
+}
+
+#get-weather {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#get-weather:hover {
+    background-color: #2980b9;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.Logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.weather-data {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.weather-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    transition: opacity 0.5s ease;
+}
+
+.weather-content {
+    position: relative;
+    z-index: 1;
+}
+
+.weather-data h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.weather-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.charts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.chart-box {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table-section {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#chatbot-container {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chatlog {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ecf0f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.user-input {
+    width: calc(100% - 70px);
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.send-button {
+    width: 60px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+    background-color: #2980b9;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .sidebar h2 {
+        display: none;
+    }
+
+    .sidebar button {
+        padding: 8px 5px;
+        margin: 5px;
+        font-size: 0.9em;
+    }
+
+    .main-content {
+        padding: 10px;
+        margin-bottom: 70px; /* Leave space for the fixed sidebar */
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-container {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .profile-pic {
+        display: none;
+    }
+
+    .charts-container {
+        grid-template-columns: 1fr;
+    }
+}
